@@ -22,15 +22,15 @@ void loop() {
   mpu.getMotion6(&ax, &ay, &az, &gx, &gy, &gz);//Read acclrmtr gyrscp data mel mpu
 
   // hedhi l conversion mel int(rq:l mpu6050 aandah 16-bit resolution good!!) le g(unit:gravity)
-  //The MPU6050 sensor has a full-scale range of ±2g, ±4g, ±8g, or ±16g, depending on the sensitivity setting.
-  // li nekhdem bih f sim aandah range ±2g aa heka ne9sem aala  16384.0((2^16=)65536 / 4(=2*2 2eqal ranges aal pos w neg kol wa7da bou zoz g ) = 16384)
+  //The MPU6050 sensor has a full-scale range of ï¿½2g, ï¿½4g, ï¿½8g, or ï¿½16g, depending on the sensitivity setting.
+  // li nekhdem bih f sim aandah range ï¿½2g aa heka ne9sem aala  16384.0((2^16=)65536 / 4(=2*2 2eqal ranges aal pos w neg kol wa7da bou zoz g ) = 16384)
   float accel_x = (float)ax / 16384.0;
   float accel_y = (float)ay / 16384.0;
   float accel_z = (float)az / 16384.0;
 
   //hedhi mtaa e gyro
-  //The MPU6050 sensor has a full-scale range of ±250°/s, ±500°/s, ±1000°/s, or ±2000°/s, depending on the sensitivity setting.
-  // // li nekhdem bih f sim aandah range ±250°/s
+  //The MPU6050 sensor has a full-scale range of ï¿½250ï¿½/s, ï¿½500ï¿½/s, ï¿½1000ï¿½/s, or ï¿½2000ï¿½/s, depending on the sensitivity setting.
+  // // li nekhdem bih f sim aandah range ï¿½250ï¿½/s
   // ((2^16=)65536 /500(=250*2 )=131
   float gyro_x = (float)gx / 131.0;
   float gyro_y = (float)gy / 131.0;
@@ -52,3 +52,5 @@ void loop() {
   delay(1000);
   Serial.println();
   delay(1000);}
+
+  // Sorry I have mpu but I don't have an ESP32 to test but chechking the key point are there from library import to communinication protocole usage greate job
